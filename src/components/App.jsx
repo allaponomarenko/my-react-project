@@ -1,21 +1,32 @@
 import Product from './Product';
 import { Alert } from "./Alert";
 
+
+
+
 export default function App() {
   return (
     <div>
-      <Alert variant="info">
+      <Alert variant="alert--info" outlined elevated>
         Would you like to browse our recommended products?
       </Alert>
-      <Alert variant="error">
+      <Alert variant="alert--error" outlined elevated>
         There was an error during your last transaction
       </Alert>
-      <Alert variant="success">
+      <Alert variant="alert--success" outlined elevated>
         Payment received, thank you for your purchase
       </Alert>
-      <Alert variant="warning">
+      <Alert variant="alert--warning" outlined elevated>
         Please update your profile contact information
       </Alert>
+
+
+
+
+
+
+
+
 
       <h1>Best selling</h1>
 
