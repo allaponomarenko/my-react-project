@@ -6,6 +6,29 @@ import { FollowButton } from "./FollowButton";
 
 
 export default function App() {
+  const alerts = [
+    {
+      id: 1,
+      variant: "info",
+      text: "Would you like to browse our recommended products?",
+    },
+    {
+      id: 2,
+      variant: "error",
+      text: "There was an error during your last transaction",
+    },
+    {
+      id: 3,
+      variant: "success",
+      text: "Payment received, thank you for your purchase",
+    },
+    {
+      id: 4,
+      variant: "warning",
+      text: "Please update your profile contact information",
+    },
+  ];
+
   return (
     <div>
       <p><HiUser className="my-icon" size={24} /> Alla</p>
@@ -13,21 +36,11 @@ export default function App() {
       <LoginButton />
       <FollowButton />
 
-      <Alert variant="info" outlined elevated>
-        Would you like to browse our recommended products?
-      </Alert>
-
-      <Alert variant="error" outlined elevated>
-        There was an error during your last transaction
-      </Alert>
-
-      <Alert variant="success" outlined elevated>
-        Payment received, thank you for your purchase
-      </Alert>
-
-      <Alert variant="warning" outlined elevated>
-        Please update your profile contact information
-      </Alert>
+      {alerts.map(({ id, variant, text }) => (
+        <Alert key={id} variant={variant} outlined elevated>
+          {text}
+        </Alert>
+      ))}
 
        <h1>Best selling</h1>
 
